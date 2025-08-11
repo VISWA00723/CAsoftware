@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Copilot - AI Assistant for Chartered Accountants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation Controls -->
+        <div class="nav-container">
+            <div class="nav-controls">
+                <button class="nav-btn" id="prevBtn" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                    <span class="btn-text">Previous</span>
+                </button>
+                <div class="slide-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
+                </div>
+                <button class="nav-btn" id="nextBtn">
+                    <span class="btn-text">Next</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-wrapper">
+            <!-- Slide 1: Title Slide -->
+            <div class="slide active" data-slide="1">
+                <div class="slide-content title-slide">
+                    <div class="title-content">
+                        <h1 class="main-title">CA Copilot</h1>
+                        <p class="tagline">Your AI-powered accounting partner — automate, check, and file faster</p>
+                        <div class="title-features">
+                            <div class="feature-highlight">
+                                <span class="highlight-number">40-60%</span>
+                                <span class="highlight-text">Workload Reduction</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <span class="highlight-number">7</span>
+                                <span class="highlight-text">Core AI Features</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <span class="highlight-number">10</span>
+                                <span class="highlight-text">Week MVP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Problem Statement -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h2 class="slide-title">The Challenge Facing Chartered Accountants</h2>
+                    <div class="problem-grid">
+                        <div class="problem-item">
+                            <div class="problem-icon">📄</div>
+                            <h3>Manual Data Entry</h3>
+                            <p>CAs spend 3+ hours daily on repetitive data entry from invoices, receipts, and bank statements</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">🔄</div>
+                            <h3>Bank Reconciliation</h3>
+                            <p>4+ hours weekly matching transactions manually, prone to human errors and delays</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">📋</div>
+                            <h3>Compliance Complexity</h3>
+                            <p>GST filing, ITR preparation, and audit reports consume valuable professional time</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">📅</div>
+                            <h3>Deadline Management</h3>
+                            <p>Tracking multiple client deadlines, missing critical compliance dates</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">💰</div>
+                            <h3>Client Queries</h3>
+                            <p>Repetitive client questions disrupting workflow and reducing billable hour efficiency</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">⚡</div>
+                            <h3>Scale Limitations</h3>
+                            <p>Manual processes limit practice growth and client acquisition potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Market Opportunity -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h2 class="slide-title">Market Opportunity</h2>
+                    <div class="market-stats">
+                        <div class="stat-card large">
+                            <h3>Accounting Services Market</h3>
+                            <div class="stat-number">₹1,28,000 Cr</div>
+                            <p>Current market size in India (2025)</p>
+                            <div class="growth-indicator">+24% CAGR projected to ₹1,59,000 Cr by 2030</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Software Market</h3>
+                            <div class="stat-number">₹5,300 Cr</div>
+                            <p>Accounting software market (2024)</p>
+                            <div class="growth-indicator">Growing to ₹11,600 Cr by 2033</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Digital Transformation</h3>
+                            <div class="stat-number">40-60%</div>
+                            <p>Automation demand</p>
+                            <div class="growth-indicator">Driven by GST compliance needs</div>
+                        </div>
+                    </div>
+                    <div class="market-insights">
+                        <h3>Key Market Drivers</h3>
+                        <ul class="insight-list">
+                            <li>GST digitization mandating electronic compliance</li>
+                            <li>3.2+ lakh practicing CAs seeking efficiency solutions</li>
+                            <li>SME sector growth requiring professional accounting services</li>
+                            <li>Rising adoption of cloud-based accounting solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Product Positioning -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h2 class="slide-title">Product Positioning & Target Market</h2>
+                    <div class="positioning-grid">
+                        <div class="target-segment">
+                            <h3>Individual Chartered Accountants</h3>
+                            <ul>
+                                <li>Solo practitioners managing 50-200+ clients</li>
+                                <li>Seeking to reduce manual work and increase capacity</li>
+                                <li>Need cost-effective automation solutions</li>
+                                <li>Focus on compliance accuracy and deadline management</li>
+                            </ul>
+                        </div>
+                        <div class="target-segment">
+                            <h3>Small-to-Mid Accounting Firms</h3>
+                            <ul>
+                                <li>5-50 employee firms handling diverse client portfolios</li>
+                                <li>Standardizing processes across team members</li>
+                                <li>Scaling operations without proportional hiring</li>
+                                <li>Improving service delivery consistency</li>
+                            </ul>
+                        </div>
+                        <div class="target-segment">
+                            <h3>SME Finance Departments</h3>
+                            <ul>
+                                <li>Companies with ₹10-500 Cr annual turnover</li>
+                                <li>In-house accounting teams needing AI assistance</li>
+                                <li>Complex compliance requirements across states</li>
+                                <li>Integration with existing ERP systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="value-proposition">
+                        <h3>Core Value Proposition</h3>
+                        <div class="value-cards">
+                            <div class="value-card">
+                                <strong>Efficiency</strong>
+                                <p>Reduce repetitive tasks by 40-60%</p>
+                            </div>
+                            <div class="value-card">
+                                <strong>Accuracy</strong>
+                                <p>AI-powered error detection and compliance checks</p>
+                            </div>
+                            <div class="value-card">
+                                <strong>Scale</strong>
+                                <p>Handle more clients without increasing overhead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Core Features Overview -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h2 class="slide-title">Core Features Overview</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📄</div>
+                            <h3>Smart Document Intake</h3>
+                            <p>Drag-and-drop invoices, bank statements, receipts; auto-classified & tagged</p>
+                            <div class="tech-stack">OCR + LayoutLMv3</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔍</div>
+                            <h3>Data Extraction & Autofill</h3>
+                            <p>Pulls amounts, GST numbers, dates from docs & fills tax forms automatically</p>
+                            <div class="tech-stack">NLP + Entity Recognition</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🏦</div>
+                            <h3>Automated Bank Reconciliation</h3>
+                            <p>Matches bank transactions with ledgers; flags mismatches only</p>
+                            <div class="tech-stack">Matching Algorithm + AI</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>GST & Tax Drafting</h3>
+                            <p>Prepares draft GST returns, ITRs; suggests deductions intelligently</p>
+                            <div class="tech-stack">LLM + Tax Rule Engine</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📋</div>
+                            <h3>Pre-Audit Report Generator</h3>
+                            <p>Reads all financial docs & produces compliance checklist + risk flags</p>
+                            <div class="tech-stack">Summarization + Anomaly Detection</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📅</div>
+                            <h3>Due Date & Compliance Tracker</h3>
+                            <p>Auto-tracks deadlines, sends reminders via email/WhatsApp</p>
+                            <div class="tech-stack">Task Scheduler</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
+                            <h3>AI Chatbot for Clients</h3>
+                            <p>Answers "When is my GST due?", "Share last month's report", etc.</p>
+                            <div class="tech-stack">RAG (Retrieval-Augmented Generation)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Feature Deep Dive - Smart Document Intake -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h2 class="slide-title">Feature Deep Dive: Smart Document Intake</h2>
+                    <div class="feature-details">
+                        <div class="feature-description">
+                            <h3>Automated Document Processing</h3>
+                            <p>Transform manual document handling into an intelligent, automated workflow that saves hours daily.</p>
+                            
+                            <div class="capability-list">
+                                <h4>Supported Document Types</h4>
+                                <ul>
+                                    <li>Invoices (Sales & Purchase)</li>
+                                    <li>Bank Statements (PDF & Excel)</li>
+                                    <li>Receipts & Bills</li>
+                                    <li>PAN & GST Registration Docs</li>
+                                    <li>Financial Statements</li>
+                                    <li>Tax Forms & Returns</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="technical-specs">
+                            <h4>Technical Implementation</h4>
+                            <div class="tech-flow">
+                                <div class="tech-step">
+                                    <strong>Step 1: OCR Processing</strong>
+                                    <p>PaddleOCR/Tesseract extracts text from scanned/image documents with 95%+ accuracy</p>
+                                </div>
+                                <div class="tech-step">
+                                    <strong>Step 2: Document Classification</strong>
+                                    <p>LayoutLMv3 model identifies document type and structure automatically</p>
+                                </div>
+                                <div class="tech-step">
+                                    <strong>Step 3: Auto-Tagging</strong>
+                                    <p>AI assigns relevant tags based on content, client, and document category</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="benefits-metrics">
+                            <h4>Impact Metrics</h4>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <span class="metric-number">95%</span>
+                                    <span class="metric-label">OCR Accuracy</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-number">5 sec</span>
+                                    <span class="metric-label">Avg Processing Time</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-number">80%</span>
+                                    <span class="metric-label">Time Savings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Feature Deep Dive - Automated Reconciliation -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h2 class="slide-title">Feature Deep Dive: Automated Bank Reconciliation</h2>
+                    <div class="feature-details">
+                        <div class="reconciliation-process">
+                            <h3>Intelligent Matching System</h3>
+                            <p>Advanced algorithms automatically match bank transactions with ledger entries, highlighting only exceptions that need attention.</p>
+                            
+                            <div class="process-flow">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <h4>Data Import</h4>
+                                    <p>Import bank statements and accounting ledgers from multiple sources</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <h4>Fuzzy Matching</h4>
+                                    <p>AI matches transactions using amount, date, description patterns</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <h4>Exception Flagging</h4>
+                                    <p>Highlights unmatched items, duplicates, and potential errors</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <h4>Review & Approve</h4>
+                                    <p>CA reviews exceptions and approves automated matches</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="matching-capabilities">
+                            <h4>Advanced Matching Rules</h4>
+                            <ul>
+                                <li>Exact amount and date matching</li>
+                                <li>Fuzzy description matching with 80%+ similarity</li>
+                                <li>Multi-currency transaction handling</li>
+                                <li>Bulk payment splitting and allocation</li>
+                                <li>Standing instruction recognition</li>
+                                <li>Inter-bank transfer identification</li>
+                            </ul>
+                        </div>
+
+                        <div class="reconciliation-benefits">
+                            <h4>Key Benefits</h4>
+                            <div class="benefit-cards">
+                                <div class="benefit-card">
+                                    <strong>88% Time Savings</strong>
+                                    <p>From 4 hours/week to 30 minutes/week</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <strong>99% Accuracy</strong>
+                                    <p>Reduced human errors in matching</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <strong>Real-time Processing</strong>
+                                    <p>Daily automated reconciliation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Feature Deep Dive - Compliance & Reporting -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h2 class="slide-title">Feature Deep Dive: Compliance & Reporting</h2>
+                    <div class="compliance-features">
+                        <div class="compliance-section">
+                            <h3>GST & Tax Drafting Engine</h3>
+                            <div class="drafting-capabilities">
+                                <div class="capability">
+                                    <h4>Automated GST Returns</h4>
+                                    <ul>
+                                        <li>GSTR-1, GSTR-3B auto-generation from transaction data</li>
+                                        <li>HSN code validation and tax rate verification</li>
+                                        <li>Input tax credit optimization suggestions</li>
+                                        <li>State-wise compliance rule application</li>
+                                    </ul>
+                                </div>
+                                <div class="capability">
+                                    <h4>Income Tax Return Preparation</h4>
+                                    <ul>
+                                        <li>ITR-1 to ITR-7 form auto-population</li>
+                                        <li>Deduction identification and optimization</li>
+                                        <li>TDS reconciliation and credit matching</li>
+                                        <li>Capital gains calculation automation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reporting-section">
+                            <h3>Pre-Audit Report Generator</h3>
+                            <div class="report-features">
+                                <div class="report-type">
+                                    <h4>Compliance Checklist</h4>
+                                    <ul>
+                                        <li>Regulatory requirement verification</li>
+                                        <li>Missing document identification</li>
+                                        <li>Deadline compliance tracking</li>
+                                        <li>Risk assessment scoring</li>
+                                    </ul>
+                                </div>
+                                <div class="report-type">
+                                    <h4>Anomaly Detection</h4>
+                                    <ul>
+                                        <li>Unusual transaction pattern alerts</li>
+                                        <li>Expense category variance analysis</li>
+                                        <li>Revenue recognition irregularities</li>
+                                        <li>Related party transaction flagging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tracking-system">
+                            <h3>Due Date & Compliance Tracker</h3>
+                            <div class="tracking-features">
+                                <div class="tracking-item">
+                                    <strong>Multi-channel Reminders</strong>
+                                    <p>Email, WhatsApp, and dashboard notifications for upcoming deadlines</p>
+                                </div>
+                                <div class="tracking-item">
+                                    <strong>Client-specific Calendars</strong>
+                                    <p>Customized compliance schedules based on business type and location</p>
+                                </div>
+                                <div class="tracking-item">
+                                    <strong>Automated Scheduling</strong>
+                                    <p>Task creation and assignment based on regulatory calendars</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Workflow Diagram -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <h2 class="slide-title">CA Copilot Workflow - MVP Process</h2>
+                    <div class="workflow-container">
+                        <div class="workflow-step">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h3>Document Upload</h3>
+                            </div>
+                            <div class="step-content">
+                                <p>CA uploads docs (PDFs, Excel, Images)</p>
+                                <div class="step-details">
+                                    <span>→ Cloud Storage</span>
+                                    <span>→ OCR & Parsing Pipeline</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-arrow">↓</div>
+
+                        <div class="workflow-step">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h3>AI Processing</h3>
+                            </div>
+                            <div class="step-content">
+                                <p>Data is structured and analyzed</p>
+                                <div class="step-details">
+                                    <span>→ LLM Tax Compliance Check</span>
+                                    <span>→ Risk Flags Created</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-arrow">↓</div>
+
+                        <div class="workflow-step">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <h3>Bank Reconciliation</h3>
+                            </div>
+                            <div class="step-content">
+                                <p>Automated transaction matching</p>
+                                <div class="step-details">
+                                    <span>→ Auto-matches Transactions</span>
+                                    <span>→ Generates Mismatches List</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-arrow">↓</div>
+
+                        <div class="workflow-step">
+                            <div class="step-header">
+                                <div class="step-number">4</div>
+                                <h3>Report Generation</h3>
+                            </div>
+                            <div class="step-content">
+                                <p>Draft reports & returns generated</p>
+                                <div class="step-details">
+                                    <span>→ CA Reviews & Approves</span>
+                                    <span>→ Exports to Tally/QuickBooks</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-arrow">↓</div>
+
+                        <div class="workflow-step">
+                            <div class="step-header">
+                                <div class="step-number">5</div>
+                                <h3>Client Management</h3>
+                            </div>
+                            <div class="step-content">
+                                <p>Automated client communication</p>
+                                <div class="step-details">
+                                    <span>→ Due Date Reminders</span>
+                                    <span>→ AI Chatbot Handles Queries</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-integrations">
+                        <h3>System Integrations</h3>
+                        <div class="integration-list">
+                            <span class="integration-item">Tally</span>
+                            <span class="integration-item">QuickBooks</span>
+                            <span class="integration-item">Zoho Books</span>
+                            <span class="integration-item">Banking APIs</span>
+                            <span class="integration-item">GST Portal</span>
+                            <span class="integration-item">Income Tax Portal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Technology Stack -->
+            <div class="slide" data-slide="10">
+                <div class="slide-content">
+                    <h2 class="slide-title">Technology Stack</h2>
+                    <div class="tech-stack-grid">
+                        <div class="tech-category">
+                            <h3>Frontend</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <strong>React</strong>
+                                    <p>Modern component-based UI framework</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>TailwindCSS</strong>
+                                    <p>Utility-first CSS framework for responsive design</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-category">
+                            <h3>Backend</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <strong>FastAPI (Python)</strong>
+                                    <p>High-performance API framework with automatic documentation</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>PostgreSQL</strong>
+                                    <p>Robust relational database for transaction data</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-category">
+                            <h3>AI Components</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <strong>OCR</strong>
+                                    <p>PaddleOCR / Google Vision API for document text extraction</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Document Parsing</strong>
+                                    <p>LayoutLMv3 / Donut for structured document understanding</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>LLM</strong>
+                                    <p>LLaMA 3, Mistral, or OpenAI API for intelligent processing</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>RAG</strong>
+                                    <p>FAISS / ChromaDB for retrieval-augmented generation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-category">
+                            <h3>Infrastructure</h3>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <strong>Automation</strong>
+                                    <p>n8n / Celery for workflow automation and task queuing</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Integrations</strong>
+                                    <p>Tally, Zoho Books, QuickBooks APIs</p>
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Deployment</strong>
+                                    <p>Docker containers on AWS EC2 / Azure cloud</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="architecture-benefits">
+                        <h3>Architecture Benefits</h3>
+                        <ul>
+                            <li><strong>Scalable:</strong> Microservices architecture supports horizontal scaling</li>
+                            <li><strong>Secure:</strong> Enterprise-grade security with encrypted data storage</li>
+                            <li><strong>Reliable:</strong> 99.9% uptime with cloud redundancy</li>
+                            <li><strong>Maintainable:</strong> Modern tech stack with strong community support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: MVP Development Timeline -->
+            <div class="slide" data-slide="11">
+                <div class="slide-content">
+                    <h2 class="slide-title">MVP Development Timeline</h2>
+                    <div class="timeline-header">
+                        <h3>10-Week Development Plan</h3>
+                        <p>Structured approach to deliver a functional MVP with core features</p>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 1-2</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Requirements & Design</h4>
+                                <ul>
+                                    <li>CA interviews and needs assessment</li>
+                                    <li>Detailed requirement documentation</li>
+                                    <li>UI/UX wireframing in Figma</li>
+                                    <li>Technical architecture planning</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Requirements doc + UI wireframes</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 3-4</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Core AI Services</h4>
+                                <ul>
+                                    <li>OCR microservice development</li>
+                                    <li>Document parser implementation</li>
+                                    <li>FastAPI backend architecture</li>
+                                    <li>Database schema design</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Working OCR + Document Parser API</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 5-6</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>LLM Integration</h4>
+                                <ul>
+                                    <li>LLM model integration and fine-tuning</li>
+                                    <li>Tax compliance check algorithms</li>
+                                    <li>Q&A chatbot implementation</li>
+                                    <li>RAG system setup</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: AI-powered compliance checker</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 7</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Reconciliation Engine</h4>
+                                <ul>
+                                    <li>Bank reconciliation algorithm development</li>
+                                    <li>Transaction matching logic</li>
+                                    <li>Report generator implementation</li>
+                                    <li>Export functionality to accounting software</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Automated reconciliation module</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 8</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Frontend Development</h4>
+                                <ul>
+                                    <li>React dashboard development</li>
+                                    <li>API integration with backend services</li>
+                                    <li>User interface implementation</li>
+                                    <li>Responsive design optimization</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Complete web dashboard</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 9</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Testing & QA</h4>
+                                <ul>
+                                    <li>End-to-end testing with sample CA data</li>
+                                    <li>Performance optimization and bug fixes</li>
+                                    <li>Security audit and penetration testing</li>
+                                    <li>User acceptance testing with pilot CAs</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Fully tested MVP</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="week-label">Week 10</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Deployment & Launch</h4>
+                                <ul>
+                                    <li>Production deployment setup</li>
+                                    <li>Cloud infrastructure configuration</li>
+                                    <li>Monitoring and logging implementation</li>
+                                    <li>Beta user onboarding</li>
+                                </ul>
+                                <div class="deliverable">Deliverable: Live MVP ready for users</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Expected Efficiency Gains -->
+            <div class="slide" data-slide="12">
+                <div class="slide-content">
+                    <h2 class="slide-title">Expected Efficiency Gains</h2>
+                    <div class="efficiency-overview">
+                        <div class="overall-savings">
+                            <h3>Overall Impact</h3>
+                            <div class="savings-highlight">
+                                <span class="savings-number">40-60%</span>
+                                <span class="savings-text">Workload Reduction</span>
+                            </div>
+                            <p>Comprehensive automation across all major accounting tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="efficiency-table">
+                        <div class="table-header">
+                            <div class="header-cell">Task</div>
+                            <div class="header-cell">Manual Time</div>
+                            <div class="header-cell">AI Time</div>
+                            <div class="header-cell">Savings</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="task-cell">
+                                <strong>Data Entry</strong>
+                                <p>Invoice processing, receipt categorization</p>
+                            </div>
+                            <div class="time-cell manual">3 hrs/day</div>
+                            <div class="time-cell ai">30 min/day</div>
+                            <div class="savings-cell">~80%</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="task-cell">
+                                <strong>Bank Reconciliation</strong>
+                                <p>Transaction matching, exception handling</p>
+                            </div>
+                            <div class="time-cell manual">4 hrs/week</div>
+                            <div class="time-cell ai">30 min/week</div>
+                            <div class="savings-cell">~88%</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="task-cell">
+                                <strong>GST Draft Preparation</strong>
+                                <p>GSTR-1, GSTR-3B form preparation</p>
+                            </div>
+                            <div class="time-cell manual">2 hrs/month</div>
+                            <div class="time-cell ai">15 min/month</div>
+                            <div class="savings-cell">~87%</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="task-cell">
+                                <strong>Audit Preparation</strong>
+                                <p>Document compilation, compliance checks</p>
+                            </div>
+                            <div class="time-cell manual">6 hrs/month</div>
+                            <div class="time-cell ai">2 hrs/month</div>
+                            <div class="savings-cell">~66%</div>
+                        </div>
+                    </div>
+
+                    <div class="roi-projections">
+                        <h3>Return on Investment Projections</h3>
+                        <div class="roi-cards">
+                            <div class="roi-card">
+                                <h4>Individual CA</h4>
+                                <div class="roi-metric">₹50,000/month</div>
+                                <p>Time savings value based on billable hours</p>
+                            </div>
+                            <div class="roi-card">
+                                <h4>Small Firm (5 CAs)</h4>
+                                <div class="roi-metric">₹2.5 Lakh/month</div>
+                                <p>Collective productivity gains across team</p>
+                            </div>
+                            <div class="roi-card">
+                                <h4>Mid Firm (20 CAs)</h4>
+                                <div class="roi-metric">₹10 Lakh/month</div>
+                                <p>Scale benefits with standardized processes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Scalability Roadmap -->
+            <div class="slide" data-slide="13">
+                <div class="slide-content">
+                    <h2 class="slide-title">Scalability Roadmap</h2>
+                    <div class="roadmap-timeline">
+                        <div class="phase-card current">
+                            <div class="phase-header">
+                                <h3>Phase 1: MVP (Current)</h3>
+                                <span class="phase-duration">Months 1-3</span>
+                            </div>
+                            <div class="phase-content">
+                                <ul>
+                                    <li>Core 7 features implementation</li>
+                                    <li>Document processing and reconciliation</li>
+                                    <li>Basic GST and tax compliance</li>
+                                    <li>Web-based dashboard</li>
+                                    <li>Pilot with 50 CAs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <h3>Phase 2: Enhanced Automation</h3>
+                                <span class="phase-duration">Months 4-8</span>
+                            </div>
+                            <div class="phase-content">
+                                <ul>
+                                    <li>AI-based expense categorization</li>
+                                    <li>Predictive tax planning algorithms</li>
+                                    <li>Advanced anomaly detection</li>
+                                    <li>Mobile app for on-the-go access</li>
+                                    <li>Integration with 15+ accounting software</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <h3>Phase 3: Multi-language Support</h3>
+                                <span class="phase-duration">Months 9-12</span>
+                            </div>
+                            <div class="phase-content">
+                                <ul>
+                                    <li>English, Hindi, Tamil language support</li>
+                                    <li>Regional compliance variations</li>
+                                    <li>Local document format recognition</li>
+                                    <li>State-specific GST rule engines</li>
+                                    <li>Expand to 500+ CAs across India</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <h3>Phase 4: Voice & AI Assistants</h3>
+                                <span class="phase-duration">Months 13-18</span>
+                            </div>
+                            <div class="phase-content">
+                                <ul>
+                                    <li>Voice-based commands for hands-free use</li>
+                                    <li>WhatsApp integration for client communication</li>
+                                    <li>Smart scheduling and calendar management</li>
+                                    <li>Advanced AI recommendations</li>
+                                    <li>Integration with bank APIs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <div class="phase-header">
+                                <h3>Phase 5: Autonomous Operations</h3>
+                                <span class="phase-duration">Months 19-24</span>
+                            </div>
+                            <div class="phase-content">
+                                <ul>
+                                    <li>Fully autonomous filing with one-click approval</li>
+                                    <li>Real-time compliance monitoring</li>
+                                    <li>Predictive audit preparation</li>
+                                    <li>Enterprise-grade security and compliance</li>
+                                    <li>Scale to 5,000+ users nationwide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="market-expansion">
+                        <h3>Market Expansion Strategy</h3>
+                        <div class="expansion-metrics">
+                            <div class="expansion-target">
+                                <strong>Year 1:</strong> 500 CAs across 5 major cities
+                            </div>
+                            <div class="expansion-target">
+                                <strong>Year 2:</strong> 2,000 CAs across 15 cities
+                            </div>
+                            <div class="expansion-target">
+                                <strong>Year 3:</strong> 5,000+ CAs nationwide + enterprise clients
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Competitive Analysis -->
+            <div class="slide" data-slide="14">
+                <div class="slide-content">
+                    <h2 class="slide-title">Competitive Analysis</h2>
+                    <div class="competitive-landscape">
+                        <h3>Current Market Players</h3>
+                        <div class="competitor-table">
+                            <div class="table-header">
+                                <div class="header-cell">Platform</div>
+                                <div class="header-cell">Pricing</div>
+                                <div class="header-cell">Key Features</div>
+                                <div class="header-cell">Limitations</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="competitor-cell">
+                                    <strong>Simplify Practice</strong>
+                                </div>
+                                <div class="price-cell">₹100/user/month</div>
+                                <div class="features-cell">
+                                    <ul>
+                                        <li>Basic practice management</li>
+                                        <li>Client portal</li>
+                                        <li>Document storage</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations-cell">No AI automation, manual processes</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="competitor-cell">
+                                    <strong>Jamku</strong>
+                                </div>
+                                <div class="price-cell">₹1,300-1,500/user/year</div>
+                                <div class="features-cell">
+                                    <ul>
+                                        <li>GST filing assistance</li>
+                                        <li>ITR preparation</li>
+                                        <li>Basic reconciliation</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations-cell">Limited AI, no OCR automation</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="competitor-cell">
+                                    <strong>Zoho Practice</strong>
+                                </div>
+                                <div class="price-cell">₹2,950-8,950/user/month</div>
+                                <div class="features-cell">
+                                    <ul>
+                                        <li>Comprehensive practice suite</li>
+                                        <li>CRM integration</li>
+                                        <li>Time tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations-cell">Expensive, complex setup</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="competitor-cell">
+                                    <strong>Practive</strong>
+                                </div>
+                                <div class="price-cell">₹5,940/year</div>
+                                <div class="features-cell">
+                                    <ul>
+                                        <li>Practice management</li>
+                                        <li>Compliance tracking</li>
+                                        <li>Client communication</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations-cell">No automation, traditional workflow</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="competitive-advantages">
+                        <h3>CA Copilot Competitive Advantages</h3>
+                        <div class="advantage-grid">
+                            <div class="advantage-card">
+                                <h4>AI-First Approach</h4>
+                                <p>Only solution with comprehensive AI automation across all accounting tasks</p>
+                            </div>
+                            <div class="advantage-card">
+                                <h4>Superior ROI</h4>
+                                <p>40-60% productivity gains vs 10-20% from traditional software</p>
+                            </div>
+                            <div class="advantage-card">
+                                <h4>Intelligent Document Processing</h4>
+                                <p>Advanced OCR + LLM combination unmatched in Indian market</p>
+                            </div>
+                            <div class="advantage-card">
+                                <h4>Competitive Pricing</h4>
+                                <p>₹2,500/user/month - premium features at mid-market pricing</p>
+                            </div>
+                            <div class="advantage-card">
+                                <h4>India-Specific</h4>
+                                <p>Built for Indian GST, ITR, and compliance requirements</p>
+                            </div>
+                            <div class="advantage-card">
+                                <h4>Easy Integration</h4>
+                                <p>Seamless connection with existing Tally, QuickBooks workflows</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="market-positioning">
+                        <h3>Market Positioning</h3>
+                        <div class="positioning-statement">
+                            <p><strong>CA Copilot</strong> positions itself as the <em>first AI-native accounting automation platform</em> for Indian CAs, offering enterprise-grade intelligence at SME-friendly pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Next Steps & Investment -->
+            <div class="slide" data-slide="15">
+                <div class="slide-content">
+                    <h2 class="slide-title">Next Steps & Investment Requirements</h2>
+                    <div class="investment-overview">
+                        <div class="funding-summary">
+                            <h3>Total Funding Required</h3>
+                            <div class="funding-amount">₹2.5 Crores</div>
+                            <p>Seed funding for MVP development and market entry</p>
+                        </div>
+
+                        <div class="fund-allocation">
+                            <h3>Fund Allocation</h3>
+                            <div class="allocation-grid">
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">40%</div>
+                                    <div class="allocation-details">
+                                        <h4>Development Team</h4>
+                                        <p>6 engineers (AI/ML, Backend, Frontend)</p>
+                                        <span class="allocation-amount">₹1.0 Cr</span>
+                                    </div>
+                                </div>
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">25%</div>
+                                    <div class="allocation-details">
+                                        <h4>Infrastructure & Tools</h4>
+                                        <p>Cloud services, AI APIs, development tools</p>
+                                        <span class="allocation-amount">₹65 Lakh</span>
+                                    </div>
+                                </div>
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">20%</div>
+                                    <div class="allocation-details">
+                                        <h4>Marketing & Sales</h4>
+                                        <p>Digital marketing, sales team, events</p>
+                                        <span class="allocation-amount">₹50 Lakh</span>
+                                    </div>
+                                </div>
+                                <div class="allocation-item">
+                                    <div class="allocation-percentage">15%</div>
+                                    <div class="allocation-details">
+                                        <h4>Operations & Legal</h4>
+                                        <p>Office, legal, compliance, admin</p>
+                                        <span class="allocation-amount">₹35 Lakh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-requirements">
+                        <h3>Core Team Structure</h3>
+                        <div class="team-grid">
+                            <div class="team-role">
+                                <h4>Technical Team (6)</h4>
+                                <ul>
+                                    <li>AI/ML Engineer (Lead)</li>
+                                    <li>Backend Engineers (2)</li>
+                                    <li>Frontend Engineer</li>
+                                    <li>DevOps Engineer</li>
+                                    <li>QA Engineer</li>
+                                </ul>
+                            </div>
+                            <div class="team-role">
+                                <h4>Business Team (4)</h4>
+                                <ul>
+                                    <li>Product Manager</li>
+                                    <li>Sales Manager</li>
+                                    <li>Marketing Specialist</li>
+                                    <li>Customer Success</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="go-to-market">
+                        <h3>Go-to-Market Strategy</h3>
+                        <div class="gtm-phases">
+                            <div class="gtm-phase">
+                                <h4>Phase 1: Pilot Program (Month 1-3)</h4>
+                                <ul>
+                                    <li>50 beta CAs in Mumbai, Delhi, Bangalore</li>
+                                    <li>Product feedback and iteration</li>
+                                    <li>Case study development</li>
+                                </ul>
+                            </div>
+                            <div class="gtm-phase">
+                                <h4>Phase 2: Market Entry (Month 4-8)</h4>
+                                <ul>
+                                    <li>Digital marketing campaigns</li>
+                                    <li>CA association partnerships</li>
+                                    <li>Content marketing and thought leadership</li>
+                                    <li>Target 500 paying customers</li>
+                                </ul>
+                            </div>
+                            <div class="gtm-phase">
+                                <h4>Phase 3: Scale & Expand (Month 9-12)</h4>
+                                <ul>
+                                    <li>Geographic expansion to tier-2 cities</li>
+                                    <li>Enterprise client acquisition</li>
+                                    <li>Partner channel development</li>
+                                    <li>Target 2,000+ users</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-next-steps">
+                        <h3>Immediate Next Steps</h3>
+                        <div class="next-steps-list">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>Investor Meetings</strong>
+                                    <p>Schedule meetings with seed investors and VCs</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <strong>Team Building</strong>
+                                    <p>Hire core technical and business team members</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <strong>Development Start</strong>
+                                    <p>Begin MVP development with first sprint planning</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <strong>Pilot Preparation</strong>
+                                    <p>Identify and onboard pilot CA partners</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <h4>Ready to Transform Accounting?</h4>
+                            <p class="contact-cta">Contact us to discuss partnership and investment opportunities</p>
+                            <div class="contact-details">
+                                <span>📧 founders@cacopilot.in</span>
+                                <span>📱 +91-XXXX-XXXXXX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
